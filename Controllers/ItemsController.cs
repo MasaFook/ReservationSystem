@@ -17,13 +17,13 @@ namespace ReservationSystem.Controllers
     [ApiController]
     public class ItemsController : ControllerBase
     {
-        //private readonly ReservationContext _context;
+        
         private readonly IItemService _service;
         private readonly IUserAuthenticationService _authenticationService;
 
         public ItemsController(ReservationContext context, IItemService service, IUserAuthenticationService authenticationService)
         {
-           // _context = context;
+           
             _service = service;
             _authenticationService = authenticationService;
         }
@@ -126,25 +126,6 @@ namespace ReservationSystem.Controllers
             }
             return NoContent();
 
-           /* _context.Entry(item).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ItemExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();*/
         }
 
         // POST: api/Items
